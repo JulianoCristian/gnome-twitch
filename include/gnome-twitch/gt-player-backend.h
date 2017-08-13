@@ -25,7 +25,7 @@ G_BEGIN_DECLS
 
 #define GT_TYPE_PLAYER_BACKEND (gt_player_backend_get_type())
 
-G_DECLARE_INTERFACE(GtPlayerBackend, gt_player_backend, GT, PLAYER_BACKEND, GObject);
+G_DECLARE_INTERFACE(GtPlayerBackend, gt_player_backend, GT, PLAYER_BACKEND, GObject)
 
 struct _GtPlayerBackendInterface
 {
@@ -34,6 +34,13 @@ struct _GtPlayerBackendInterface
     GtkWidget* (*get_widget) (GtPlayerBackend* backend);
 };
 
+/**
+ * gt_player_backend_get_widget
+ *
+ * Returns: (transfer none): The Gtk Widget
+ *
+ * Returns a Gtk.Widget that presents the player to the user
+ */
 GtkWidget* gt_player_backend_get_widget(GtPlayerBackend* backend);
 
 G_END_DECLS
